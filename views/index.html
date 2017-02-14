@@ -23,10 +23,15 @@
 <br/>
 	<div class="jumbotron"> 
 		<p align="left"><b>Start a sentence</b></p>
-		 <form class="form-horizontal" role="form" style="width: 50%;">
+		 <form class="form-horizontal" role="form" style="width: 70%;"></form>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="text" name="text" value="" />
+            <input type="text" id="text" name="text" value="" style="display: inline;" />
             <button type="button" class="btn btn-primary triggerBtn" id="gen_btn" >Generate</button>
+		</div>
+		<div class="col-sm-10">
+			<label for="response_lbl" style="vertical-align: right;"></label>
+			<label for="response_txt" style="font-weight:normal;"></label>
+		</div>	
         </div>
             <script>
 	        	$("#gen_btn").click(function() {
@@ -42,14 +47,13 @@
         			.done(function(data){
         				    console.log(data)
 	        				$("#text").val("")
-	        				$("label[for=response_lbl]").text(data[0].text)
+	        				$("label[for='response_lbl']").text("Response: ") 
+	        				$("label[for='response_txt']").text(data[0].text)
 
         			})
 	        	})
         	</script>
     	</div>
 	</div>
-	<label for="response_lbl" style="vertical-align: left"></label>
-</div>
 </body>
 </html>
