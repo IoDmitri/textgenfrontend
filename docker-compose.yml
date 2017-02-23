@@ -1,0 +1,17 @@
+version: "2"
+services:
+  model:
+    image: model_server
+    ports: 
+      - "5000:5000"
+    network_mode: host
+  frontend:
+    image: text_gen_site
+    ports: 
+      - "3000:3000"
+    environment:
+      - TF_APP_HOST=model
+    depends_on:
+      - model
+    network_mode: host
+

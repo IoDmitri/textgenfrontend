@@ -22,8 +22,8 @@
 </div>
 <br/>
 	<div class="jumbotron"> 
-		<p align="left"><b>Start a sentence</b></p>
-		 <form class="form-horizontal" role="form" style="width: 70%;"></form>
+		<p align="left"><b>Type in the start of a sentence</b></p>
+	 	<form class="form-horizontal" role="form" style="width: 70%;"></form>
         <div class="col-sm-10">
             <input type="text" id="text" name="text" value="" style="display: inline;" />
             <button type="button" class="btn btn-primary triggerBtn" id="gen_btn" >Generate</button>
@@ -40,7 +40,7 @@
 	        		$.ajax({
 	        			type : "POST",
 	        			contentType: "application/json",
-	        			url: "http://localhost:5000/gen_text",
+	        			url: "http://0.0.0.0:5000/gen_text",
 	        			data : JSON.stringify({"text" : text}),
 	        			dataType: "json"
         			})
